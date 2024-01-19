@@ -1,6 +1,34 @@
 import logo from './logo.svg';
 import './App.css';
 
+// JSX Example
+
+function formatName(user) {
+  return user.firstName + ' ' + user.lastName;
+}
+
+const user = {
+  firstName: 'JC',
+  lastName: 'Coles'
+};
+
+const element = (
+  <h1>
+    Hello, {formatName(user)}!
+  </h1>
+);
+
+// Array method example
+
+const users = [
+  { id: 1, name: 'JC Coles' },
+  { id: 2, name: 'Steven Coles' },
+  { id: 3, name: 'Chase Coles' }
+];
+
+const userNames = users.map(user => user.name);
+
+
 function App() {
   return (
     <div className="App">
@@ -15,8 +43,11 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          {element}
         </a>
+        <div>
+          {userNames}
+        </div>
       </header>
     </div>
   );
